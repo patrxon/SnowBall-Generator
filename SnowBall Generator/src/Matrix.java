@@ -18,7 +18,7 @@ public class Matrix {
 		
 	}
 	
-	public Boolean isEmpty(int x,int y) {
+	public Boolean isEmpty(int x,int y) throws ArrayIndexOutOfBoundsException  {
 		return tab[x][y].isEmpty(); 
 	}
 	
