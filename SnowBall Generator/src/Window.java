@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -70,66 +71,68 @@ public class Window extends JFrame{
 		
 		while(i != max)
 		{
-			
-			if((i+d)%8==0) {
-				if( testPoint(x,y+1) ) {
-					nextPoint(x,y+1);
-					break;
+			try {
+				if ((i + d) % 8 == 0) {
+					if (testPoint(x, y + 1)) {
+						nextPoint(x, y + 1);
+						break;
+					}
 				}
-			}
 
-			if((i+d)%8==1) {
-				if( testPoint(x+1,y+1) ) {
-					nextPoint(x+1,y+1);
-					break;
+				if ((i + d) % 8 == 1) {
+					if (testPoint(x + 1, y + 1)) {
+						nextPoint(x + 1, y + 1);
+						break;
+					}
 				}
+
+				if ((i + d) % 8 == 2) {
+					if (testPoint(x + 1, y)) {
+						nextPoint(x + 1, y);
+						break;
+					}
+				}
+
+				if ((i + d) % 8 == 3) {
+					if (testPoint(x + 1, y - 1)) {
+						nextPoint(x + 1, y - 1);
+						break;
+					}
+				}
+
+				if ((i + d) % 8 == 4) {
+					if (testPoint(x, y - 1)) {
+						nextPoint(x, y - 1);
+						break;
+					}
+				}
+
+				if ((i + d) % 8 == 5) {
+					if (testPoint(x - 1, y - 1)) {
+						nextPoint(x - 1, y - 1);
+						break;
+					}
+				}
+
+				if ((i + d) % 8 == 6) {
+					if (testPoint(x - 1, y)) {
+						nextPoint(x - 1, y);
+						break;
+					}
+				}
+
+				if ((i + d) % 8 == 7) {
+					if (testPoint(x - 1, y + 1)) {
+						nextPoint(x - 1, y + 1);
+						break;
+					}
+				}
+
+				if (max == 7) i++;
+				if (max == 1) i--;
+			}catch(ArrayIndexOutOfBoundsException e){
+				break;
 			}
-			
-			if((i+d)%8==2) {
-				if( testPoint(x+1,y) ) {
-					nextPoint(x+1,y);
-					break;
-				}
-			}
-			
-			if((i+d)%8==3) {
-				if( testPoint(x+1,y-1) ) {
-					nextPoint(x+1,y-1);
-					break;
-				}
-			}
-			
-			if((i+d)%8==4) {
-				if( testPoint(x,y-1) ) {
-					nextPoint(x,y-1);
-					break;
-				}
-			}
-			
-			if((i+d)%8==5) {
-				if( testPoint(x-1,y-1) ) {
-					nextPoint(x-1,y-1);
-					break;
-				}
-			}
-			
-			if((i+d)%8==6) {
-				if( testPoint(x-1,y) ) {
-					nextPoint(x-1,y);
-					break;
-				}
-			}
-			
-			if((i+d)%8==7) {
-				if( testPoint(x-1,y+1) ) {
-					nextPoint(x-1,y+1);
-					break;
-				}
-			}	
-			
-			if(max ==7) i++;
-			if(max ==1) i--;
-			
 		}	
 		
 	}
