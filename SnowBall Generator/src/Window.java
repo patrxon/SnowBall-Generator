@@ -26,6 +26,7 @@ public class Window extends JFrame{
 	
 	Window()
 	{
+		Initialize();
 		map = new Matrix(x,y); 
 		num = new Code(dlugosc);
 		map.ocupie(lastX,lastY);
@@ -37,6 +38,17 @@ public class Window extends JFrame{
 		run();
 		
 	}
+
+	private void Initialize() {
+
+		setBounds (400 ,200 ,740 ,740);
+		setFont ( new Font ( Font . SANS_SERIF , Font . PLAIN ,20));
+		setTitle("SnowBall");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+		setResizable(false);
+	}
+
 	void run() {
 		
 		for(int i=0; i<dlugosc; i++) {
@@ -130,9 +142,9 @@ public class Window extends JFrame{
 				if(max ==7) i++;
 				if(max ==1) i--;
 
-		}catch(ArrayIndexOutOfBoundsException e) {
-			break;
-		}
+			}catch(ArrayIndexOutOfBoundsException e) {
+				break;
+			}
 
 		}	
 		
