@@ -70,6 +70,7 @@ public class Window extends JFrame{
 		
 		while(i != max)
 		{
+			try{
 			
 			if((i+d)%8==0) {
 				if( testPoint(x,y+1) ) {
@@ -129,6 +130,9 @@ public class Window extends JFrame{
 			
 			if(max ==7) i++;
 			if(max ==1) i--;
+			}catch (ArrayIndexOutOfBounds e){
+				break;
+			}
 			
 		}	
 		
