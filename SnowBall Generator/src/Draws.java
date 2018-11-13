@@ -11,6 +11,7 @@ public class Draws extends JPanel implements ActionListener {
 	private final int DELAY = 10;
 	private Timer timer; 
 	private int size=7;
+	private int maxy=100; 
 
 	public Draws() {
 
@@ -26,7 +27,7 @@ public class Draws extends JPanel implements ActionListener {
 		Graphics2D g2d = (Graphics2D) g;
 		
 		for(int i=0; i<Window.lines.size(); i++) {
-			g2d.drawLine( Window.lines.get(i).getX()*size, Window.lines.get(i).getY()*size, Window.lines.get(i).getX2()*size, Window.lines.get(i).getY2()*size);
+			g2d.drawLine( Window.lines.get(i).getX()*size, (maxy-Window.lines.get(i).getY())*size, Window.lines.get(i).getX2()*size, (maxy-Window.lines.get(i).getY2())*size);
 		}
 		
 	}
