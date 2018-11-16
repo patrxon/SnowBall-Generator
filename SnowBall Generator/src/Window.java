@@ -13,14 +13,14 @@ public class Window extends JFrame{
 	
 	static ArrayList<Lines> lines = new ArrayList();
 	
-	private int x=100;
-	private int y=100;
-	private int dlugosc=20000;
+	private int x=200;
+	private int y=200;
+	private int dlugosc=10000;
 	
-	private int lastX=50;
-	private int lastY=50;
-	private	int curtX=50;
-	private int curtY=50;
+	private int lastX=100;
+	private int lastY=100;
+	private	int curtX=100;
+	private int curtY=100;
 	
 	private int d=0;
 	
@@ -41,7 +41,7 @@ public class Window extends JFrame{
 
 	private void Initialize() {
 
-		setBounds (400 ,200 ,740 ,740);
+		setBounds (400 ,10 ,1000 ,1000);
 		setFont ( new Font ( Font . SANS_SERIF , Font . PLAIN ,20));
 		setTitle("SnowBall");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,10 +53,14 @@ public class Window extends JFrame{
 		
 		for(int i=0; i<dlugosc; i++) {
 			
-			//System.out.printf("\nPunkt:" + curtX + " " + curtY + ">" + lastX + " " + lastY + " " + d);
+			System.out.printf("\nPunkt:" + curtX + " " + curtY + ">" + lastX + " " + lastY + " " + d);
 			
-			if(num.giveNr(i) == 1) testDir(curtX,curtY,d,1);
-			else if(num.giveNr(i) == 0) testDir(curtX,curtY,d,7);		
+			if(num.giveNr(i) == 0) testDir(curtX,curtY,d,7);	
+			else if(num.giveNr(i) == 1) testDir(curtX,curtY,d,1);
+			else if(num.giveNr(i) == 2) testDir(curtX,curtY,0,1);	
+			else if(num.giveNr(i) == 3) testDir(curtX,curtY,2,7);
+			else if(num.giveNr(i) == 4) testDir(curtX,curtY,4,1);
+			else if(num.giveNr(i) == 5) testDir(curtX,curtY,6,7);
 			
 			if(curtX == lastX && curtY == lastY+1) d=4;
 			else if(curtX == lastX+1 && curtY == lastY+1) d=5;
