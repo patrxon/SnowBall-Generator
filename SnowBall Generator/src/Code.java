@@ -14,7 +14,6 @@ public class Code {
 		{
 			c=code.charAt(i%code.length());
 			
-
 			if( c == '0'  ) tab[i]=0;
 			else if( c == '1' ) tab[i]=1;
 			else if( c == '2' ) tab[i]=2;

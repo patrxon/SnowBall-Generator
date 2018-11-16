@@ -31,6 +31,7 @@ public class Draws extends JPanel implements ActionListener {
 			if(i%2==0) g.setColor(new Color(255,0,0));
 			else  g.setColor(new Color(0,0,255));
 			
+			
 			g2d.drawLine( Window.lines.get(i).getX()*size, (maxy-Window.lines.get(i).getY())*size, Window.lines.get(i).getX2()*size, (maxy-Window.lines.get(i).getY2())*size);
 		}
 		

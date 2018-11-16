@@ -62,6 +62,7 @@ public class Window extends JFrame{
 			else if(num.giveNr(i) == 4) testDir(curtX,curtY,4,1);
 			else if(num.giveNr(i) == 5) testDir(curtX,curtY,6,7);
 			
+			
 			if(curtX == lastX && curtY == lastY+1) d=4;
 			else if(curtX == lastX+1 && curtY == lastY+1) d=5;
 			else if(curtX == lastX+1 && curtY == lastY) d=6;
